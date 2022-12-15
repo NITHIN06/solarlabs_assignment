@@ -10,11 +10,10 @@ url = "https://en.wikipedia.org/wiki/"+country
 HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
             'Accept-Language':'en-US, en;q=0.5'})
 
-webpage = requests.get(url, headers=HEADERS)
-soup = BeautifulSoup(webpage.content, 'html.parser')
-table = soup.find("table",attrs={"class":"infobox ib-country vcard"})
-flag_link = table.find("a", attrs={'class': "image"}).find("img")
-flag_link = "https://" + flag_link.get('srcset')
+url = "https://en.wikipedia.org/wiki/"+country
+
+HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+            'Accept-Language':'en-US, en;q=0.5'})
 print(flag_link)
 rows = soup.find_all("tr")
 

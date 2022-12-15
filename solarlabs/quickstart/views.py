@@ -28,7 +28,7 @@ def get_natDetails(request,country_name):
         if pair.find('th'):
             heading = pair.find('th')
             detail = pair.find('td')
-            print(heading.text)
+            # print(heading.text)
             if heading.text == 'Capitaland largest city':
                 capital = [i.get('title') for i in detail.find_all('a') if i.get('title') is not None]
                 l_city = capital

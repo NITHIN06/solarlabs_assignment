@@ -43,7 +43,7 @@ def get_natDetails(request,country_name):
                 l_city = [i.text for i in detail.find_all('a') if i.get('title') is not None]
                 if len(capital) == 1:
                     l_city = l_city[0]
-            if 'Official' in heading.text and 'languages' in heading.text:
+            if 'Official' in heading.text and 'language' in heading.text:
                 off_lang = [i.text for i in detail.find_all('a') if i.get('title') is not None]
                 if len(off_lang) == 1:
                     off_lang = off_lang[0]
